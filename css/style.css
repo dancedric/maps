@@ -1,0 +1,24 @@
+html, body { background-color: #2b2b2b;height: 100%; margin: 0; padding: 0; color: white; font-size: 14px; font-family: 'Oswald', sans-serif; font-weight:300; }
+a, a:link, a:hover, a:visited, a:active {color:white;}
+h1,h2,h3,h4,h5,h6 {line-height: 130%;}
+#map { margin:0 auto;height: 100%; background-color: #2b2b2b!important;}
+header {min-height:60px;background-color: #000;padding:10px;position:fixed;z-index:2;top:0px;left:0px;right:0px;}
+header .menu-link {position:fixed;right:15px;z-index:9;font-size:2rem;}
+#menu {z-index:2;background-color:rgba(0,0,0,0.8);padding:20px;padding-top:60px;}
+#menu section { margin-bottom:30px;}
+.modal-content {background-color: black;}
+#addLocation {background-color: #666;width:100%;border:none;padding:5px;color:white;}
+::-webkit-input-placeholder {
+   color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+:-ms-input-placeholder {  
+   color: white;  
+}
+#plotted-list .default {font-style: italic;}
+.popover, .popover-title {color: black!important;}
