@@ -4,6 +4,9 @@
 Maps is a small web app that lets users plot places they've travelled to (or places they would want to travel to).
 At the time of writing, when the user is done the user can take a screenshot so that they can save and set it as their desktop background.
 
+This application is not directly related / a part of fourthdraft.com. 
+It's currently just squatting in the server + domain.
+
 ### Tech
 jQuery, Google Maps javascript API
 
