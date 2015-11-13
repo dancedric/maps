@@ -22,3 +22,6 @@ header .menu-link {position:fixed;right:15px;z-index:9;font-size:2rem;}
 }
 #plotted-list .default {font-style: italic;}
 .popover, .popover-title {color: black!important;}
+
+
+#content {color: black;}

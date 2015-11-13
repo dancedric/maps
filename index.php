@@ -167,13 +167,34 @@
       var geocoder =  new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
+          console.log(results);
           var marker = new google.maps.Marker({
               map: map, 
               position: results[0].geometry.location,
               icon: 'http://fourthdraft.com/maps/img/marker.png'
           });
+
+          google.maps.event.addListener(marker, "click", function(e) {
+            var infowindow = new google.maps.InfoWindow({
+              content: '<div id="content">'+results[0].formatted_address+'<br/><strong class="small">To delete this pin, double click it</strong></div>'
+            });
+            infowindow.open(map, marker);
+          });
+
+          marker.addListener("dblclick", function(e) {
+            marker.setMap(null);
+            $("#plotted-list li").each(function(k,v) {
+              console.log( $(v).data("lng") );
+              console.log( e.latLng.lng());
+              if( $(v).data("lat") == e.latLng.lat() && $(v).data("lng") == e.latLng.lng() ) {
+                $(v).remove();
+              }
+            });
+            
+          });
+
           if( ('#plotted-list .default').length > 0) $('#plotted-list .default').remove(); 
-          $('#plotted-list').append('<li>'+$('#addLocation').val()+'</li>');
+          $('#plotted-list').append('<li data-lat="'+results[0].geometry.location.lat()+'" data-lng="'+results[0].geometry.location.lng()+'">'+results[0].formatted_address.substr(0,30)+'</li>');
           ctr++;
           if(ctr == 3) $('#promoModal').modal({show:true});
         } 
